@@ -7,10 +7,14 @@ class BankAccount:
     current_balance: float
     minimum_balance: float
 
-    def __init__(self, customer_name: str, current_balance: float, minimum_balance: float) -> None:
+    def __init__(self, customer_name: str, current_balance: float,
+                 minimum_balance: float, account_number: str, routing_number: str) -> None:
         self.customer_name = customer_name
         self.current_balance = current_balance
         self.minimum_balance = minimum_balance
+        self._account_number = account_number
+        self.__routing_number = routing_number
+
 
     def deposit(self, amount: float) -> None:
         self.current_balance += amount
@@ -34,7 +38,7 @@ def main():
 
     # customer 1 instance
     print("Object created: Customer 1: ")
-    c1 = BankAccount("John", 250, 100)
+    c1 = BankAccount("John", 250, 100, "1001", "111000")
     c1.print_customer_information()
 
     print("Method call: Customer 1 has deposited 100.")
@@ -49,7 +53,7 @@ def main():
 
     # customer 2 instance
     print("Object created: Customer 2: ")
-    c2 = BankAccount("Jane", 500, 100)
+    c2 = BankAccount("Jane", 500, 100, "1002", "111000")
     c2.print_customer_information()
 
     print("Method call: Customer 2 has withdrawn 400.")
