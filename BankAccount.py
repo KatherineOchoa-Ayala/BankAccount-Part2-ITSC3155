@@ -19,12 +19,14 @@ class BankAccount:
     def deposit(self, amount: float) -> None:
         self.current_balance += amount
 
-    def withdraw(self, amount: float) -> None:
+    def withdraw(self, amount: float) -> bool:
         # if the remaining balance is less than the minimum balance, the user cannot withdraw
         if self.current_balance - amount < self.minimum_balance:
             print("Insufficient funds.")
+            return False
         else:
             self.current_balance -= amount
+            return True
 
     def print_customer_information(self) -> None:
         print("-------------------------------------")
