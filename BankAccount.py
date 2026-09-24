@@ -34,6 +34,8 @@ class BankAccount:
         print(f"Customer Name: {self.customer_name}")
         print(f"Current Balance: {self.current_balance}")
         print(f"Minimum Balance: {self.minimum_balance}")
+        print(f"Account Number: {self._account_number}")
+        print(f"Routing Number: {self.__routing_number}")
         print("-------------------------------------\n")
 
 def main():
